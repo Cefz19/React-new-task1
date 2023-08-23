@@ -1,25 +1,40 @@
-import logo from './platzi.webp';
-import './App.css';
+import React from 'react';
+import { TaskCounter } from './TaskCounter';
+import { TaskSearch } from './TaskSearch';
+import { TaskList } from './TaskLista';
+import { TaskItem } from './TaskItem';
+import { CreateTaskBotton } from './CreateTaskBotton';
+
+const defaultTask = [
+  { text: 'To cut onions', completed: false },
+  { text: 'You do homework', completed: true },
+  { text: 'Cry with the Crybaby', completed: false },
+  { text: 'Yor do clean your bedroom', cmpleted: true },
+];
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita el archivo <code>src/App.js</code> y guarda para recargar.
-        </p>
-        <a
-          className="App-link"
-          href="https://platzi.com/reactjs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+    
+    <TaskCounter completed={16} total={25} />
+      <TaskSearch />
+
+      <TaskList>
+        {defaultTask.map(task => (
+          <TaskItem
+            key={task.text}
+            text={task.text}
+            completed={task.completed}
+          />
+        ))}
+      </TaskList>
+      <CreateTaskBotton />
+    </>
+
   );
 }
+
 
 export default App;

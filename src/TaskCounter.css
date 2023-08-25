@@ -1,0 +1,11 @@
+.TaskCounter {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 48px;
+    font-weight: normal;
+  }
+  
+  .TaskCounter span {
+    font-weight: bold;
+  }

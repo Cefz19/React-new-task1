@@ -1,7 +1,20 @@
-function TaskSearch() {
-    return (
-        <input placeholder="To cut onions"></input>
-    );
-  }
+import React from 'react';
+import './TaskSearch.css';
+function TaskSearch({
+    searchValue,
+    setSearchValue
+}) {
 
-  export { TaskSearch }
+    return (
+        <input
+            className='TaskSearch'
+            placeholder="To cut onions"
+            value={searchValue}
+            onChange={(event) => {
+                setSearchValue(event.target.value);
+            }}
+        />
+    );
+}
+
+export { TaskSearch }

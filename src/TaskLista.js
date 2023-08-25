@@ -1,6 +1,7 @@
+import './TaskList.css';
 function TaskList({ children }) {
     return (
-        <ul>
+        <ul className='TaskList'>
             {children}
         </ul>
     );

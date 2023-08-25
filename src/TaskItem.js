@@ -1,11 +1,14 @@
+import './TaskItem.css';
 function TaskItem(props) {
-    return (
-      <li>
-        <span>V</span>
-        <p>{props.text}</p>
-        <span>X</span>
-      </li>
-    );
-  }
+  return (
+        <li className='Items'>
+          <span className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}>V</span>
+          <p className={`TaskItem-p ${props.completed && "TaskItem-p--complete"}`}>
+            {props.text}</p>
+          <span className='Icon Icon-delete'
+          >X</span>
+        </li>
+  );
+}
 
-  export { TaskItem }
+export { TaskItem }

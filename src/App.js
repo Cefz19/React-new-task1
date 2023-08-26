@@ -28,7 +28,23 @@ function App() {
   );
 
 
-  console.log('The users browser task of ' + searchValue)
+const fullTask = (text) => {
+  const newTask = [...task];
+  const taskIndex = newTask.findIndex(
+    (task) => task.text === text 
+  );
+  newTask[taskIndex].completed = true;
+  setTask(newTask);
+};
+
+const deleteTask = (text) => {
+  const newTask = [...task];
+  const taskIndex = newTask.findIndex(
+    (task) => task.text === text 
+  );
+  newTask.splice(taskIndex, 1);
+  setTask(newTask);
+};
 
   return (
 
@@ -48,6 +64,8 @@ function App() {
             key={task.text}
             text={task.text}
             completed={task.completed}
+            onComplete={() => fullTask(task.text)}
+            onDelete={() => deleteTask(task.text)}
           />
         ))}
       </TaskList>

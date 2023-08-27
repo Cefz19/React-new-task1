@@ -1,15 +1,16 @@
 import { ReactComponent as CheckSVG } from './check.svg';
 import { ReactComponent as DeleteSVG} from './delete.svg';
-
+import './TaskIcon.css'
 const iconTypes = {
-    'check': <CheckSVG />,
-    'delte': <DeleteSVG />
+    'check': (color) => <CheckSVG className='Icon-svg' fill={color}/>,
+    'delete': (color) => <DeleteSVG className='Icon-svg' fill={color}/>,
 }
 
-function TaskIcon({ type }) {
+function TaskIcon({ type, color, onClick }) {
     return (
-        <span className={`Icon Icon-svg Icon-${type}`}>
-            {iconTypes[type]}
+        <span className={`Icon-container Icon-container-${type}`}
+        onClick={onClick}>
+            {iconTypes[type](color)}
         </span>
     );
 }

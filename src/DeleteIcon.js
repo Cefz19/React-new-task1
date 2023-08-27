@@ -1,11 +1,12 @@
 import React from "react";
 import { TaskIcon } from "./TaskIcon";
 
-function DeleteIcon() {
+function DeleteIcon( { onDelete }) {
     return (
         <TaskIcon
-            type='check'
-            color='red'
+            type='delete'
+            color='gray'
+            onClick={onDelete}
         />
     );
 }

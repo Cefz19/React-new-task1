@@ -1,14 +1,14 @@
 import React from 'react';
 import './TaskSearch.css';
+
 function TaskSearch({
     searchValue,
-    setSearchValue
+    setSearchValue,
 }) {
-
     return (
         <input
-            className='TaskSearch'
-            placeholder="To cut onions"
+            placeholder="Cut onions"
+            className="TaskSearch"
             value={searchValue}
             onChange={(event) => {
                 setSearchValue(event.target.value);
@@ -17,4 +17,4 @@ function TaskSearch({
     );
 }
 
-export { TaskSearch }
+export { TaskSearch };

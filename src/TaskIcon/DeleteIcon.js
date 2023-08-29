@@ -1,7 +1,7 @@
 import React from "react";
-import { TaskIcon } from "./TaskIcon";
+import { TaskIcon } from './';
 
-function DeleteIcon( { onDelete }) {
+function DeleteIcon( { onDelete } ) {
     return (
         <TaskIcon
             type='delete'

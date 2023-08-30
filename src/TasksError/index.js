@@ -1,9 +1,8 @@
 import React from 'react';
-import './TasksError.css';
 function TasksError() {
 
     return (
-        <p>Loading File....</p>
+        <p>You are Error....</p>
     );
 }
 

@@ -6,35 +6,32 @@ import { TaskItem } from '../TaskItem';
 import { TasksLoading } from '../TasksLoading';
 import { TasksError } from '../TasksError';
 import { EmptyTasks } from '../EmptyTasks';
+import { TaskContext } from "../TaskContext";
+import { Modal } from "../Model";
 import { CreateTaskBotton } from '../CreateTaskBotton';
 
-function AppUI({
-  loading,
-  error,
-  completedTask,
-  totalTask,
-  searchValue,
-  setSearchValue,
-  searchedTask,
-  completeTask,
-  deleteTask,
-}) {
+function AppUI() {
+  const {
+    loading,
+    error,
+    searchedTask,
+    completeTask,
+    deleteTask,
+    openModal,
+  } = React.useContext(TaskContext);
   return (
     <>
-      <TaskCounter
-        completed={completedTask}
-        total={totalTask} />
-      <TaskSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-
+      <TaskCounter />
+      <TaskSearch />
 
       <TaskList>
-        {loading && <TasksLoading />}
+        {loading && (<>
+          <TasksLoading />
+          <TasksLoading />
+          <TasksLoading />
+        </>)}
         {error && <TasksError />}
         {(!loading && searchedTask.length === 0) && <EmptyTasks />}
-
 
         {searchedTask.map(task => (
           <TaskItem
@@ -48,6 +45,12 @@ function AppUI({
       </TaskList>
 
       <CreateTaskBotton />
+
+      {openModal && (
+        <Modal>
+        The Functionality of Add Task
+      </Modal>
+      )}
     </>
 
   );

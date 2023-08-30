@@ -43,3 +43,16 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage }
+
+// localStorage.removeItem('TASK_V1');
+
+// const defaultTask = [
+//   { text: 'To cut onions', completed: true },
+//   { text: 'You do homework', completed: false },
+//   { text: 'Cry with the Crybaby', completed: true },
+//   { text: 'Your do clean your Carrot', completed: false },
+//   { text: 'Onions', completed: true },
+// ];
+
+// localStorage.setItem('TASK_V1', JSON.stringify(defaultTask));
+

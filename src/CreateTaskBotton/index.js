@@ -1,16 +1,16 @@
 import './CreateTaskButton.css'
-function CreateTaskBotton() {
+
+function CreateTaskBotton({ setOpenModal }) {
     return (
         <button
-        className="CreateTaskButton"
-        onClick={(event) => {
-            console.log('You push click')
-            console.log(event)
-            console.log(event.target)
-        }
-        }
+            className="CreateTaskButton"
+            onClick={
+                () => {
+                    setOpenModal(state => !state);
+                }
+            }
         >+</button>
     );
-  }
-  
-  export { CreateTaskBotton }
+}
+
+export { CreateTaskBotton }

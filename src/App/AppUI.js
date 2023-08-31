@@ -6,9 +6,10 @@ import { TaskItem } from '../TaskItem';
 import { TasksLoading } from '../TasksLoading';
 import { TasksError } from '../TasksError';
 import { EmptyTasks } from '../EmptyTasks';
-import { TaskContext } from "../TaskContext";
-import { Modal } from "../Model";
 import { CreateTaskBotton } from '../CreateTaskBotton';
+import { TaskForm } from '../TaskForm';
+import { Modal } from "../Modal";
+import { TaskContext } from "../TaskContext";
 
 function AppUI() {
   const {
@@ -18,6 +19,7 @@ function AppUI() {
     completeTask,
     deleteTask,
     openModal,
+    setOpenModal,
   } = React.useContext(TaskContext);
   return (
     <>
@@ -44,12 +46,14 @@ function AppUI() {
         ))}
       </TaskList>
 
-      <CreateTaskBotton />
+      <CreateTaskBotton
+        setOpenModal={setOpenModal}
+      />
 
       {openModal && (
         <Modal>
-        The Functionality of Add Task
-      </Modal>
+          <TaskForm />
+        </Modal>
       )}
     </>
 

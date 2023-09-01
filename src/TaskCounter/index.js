@@ -9,7 +9,7 @@ function TaskCounter() {
     } = React.useContext(TaskContext);
     return (
         <h1 className='TaskCounter'>
-            You completed {completedTask} of {totalTask} Wholes
+            You completed {completedTask} of {totalTask} Tasks
         </h1>
     );
 }

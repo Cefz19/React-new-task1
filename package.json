@@ -9,7 +9,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "npm run build",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -28,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": " https://cefz19.github.io/React-new-task1",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
